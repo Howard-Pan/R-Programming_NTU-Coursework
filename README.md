@@ -146,13 +146,13 @@ predict(Reg_admit_gpa_gre, newdata, interval="prediction", level=0.95)
 ### Q5
 #### (a.)
 > library(foreign)  
-library(rpart)  
-setwd("~/Desktop/Data/Assignment 2")  
-Admission= read.csv("admission.csv")  
-Admission$admit[Admission$admit==0]<- "Not_Admit"  
-Admission$admit[Admission$admit==1]<- "Admit"  
-rtree<-rpart(admit~., data= Admission, minsplit=20, cp=0.05 )   
-rpart.plot(rtree)  
+> library(rpart)  
+> setwd("~/Desktop/Data/Assignment 2")  
+> Admission= read.csv("admission.csv")  
+> Admission$admit[Admission$admit==0]<- "Not_Admit"  
+> Admission$admit[Admission$admit==1]<- "Admit"  
+> rtree<-rpart(admit~., data= Admission, minsplit=20, cp=0.05 )   
+> rpart.plot(rtree)  
 ##### From this decision tree, we could see the first node is GPA, 48% of the samples are above 3.4, 52% are below 3.4, and the chances of not getting admitted is 78%. For those who had GPA above 3.4, and rank <2, admission rate is 75%. For those who had GPA above 3.4, and rank >2, the chances of not getting admitted would be 64%.Since we set (cp=0.05 and minsplit =20), GRE seems to be not that important compare to other variables, so there is no node for GRE. But if we set cp=0.01, then we would see the node of GRE.
 #### (b.)
 > newdata= data.frame(gpa=3.6, gre=580, rank=2)  
