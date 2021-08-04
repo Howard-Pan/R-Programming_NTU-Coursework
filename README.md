@@ -197,5 +197,5 @@ rtree_gini<-rpart(marry~place+gender+education, data= marry, minsplit=0, cp=0.01
 rpart.plot(rtree_gini)  
 ###### rtree_gini uses gini index to do decision tree, and its first node is education.
 > rtree_information<-rpart(marry~place+gender+education, data= marry, minsplit=0, cp=0.01, parms = list(split = "information"))  
-> rpart.plot(rtree_information)  
+rpart.plot(rtree_information)  
 ##### rtree_information uses information or entropy to do decision tree, and its first node is also education.
