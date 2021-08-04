@@ -184,7 +184,7 @@ rpart.plot(rtree)
 ### Q7
 > library(foreign)  
 setwd("~/Downloads")  
-read.csv("marry.csv")  
+read.csv("marry.csv")   
 marry$marry<-as.factor(marry$marry)  
 marry$gender<-as.factor(marry$gender)  
 marry$place<-as.factor(marry$place)  
