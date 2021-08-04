@@ -58,9 +58,9 @@ c=mydata[mydata[,6]>=16 & mydata[,11]<=16,];
 d<-c(57, 696); 
 barplot(d, main = "Comparison", ylab = "Numbers",ylim =c(0,700), names.arg = c("Women>=16, Husband<=16","Others"), col = "darkred")
 #### (e.)
-lm(formula= inlf~ nwifeinc+educ+kidslt6+exper+I(exper^2), data = mydata)
+lm(formula= inlf~ nwifeinc+educ+kidslt6+exper+I(exper^2), data = mydata); 
 fit.marry<-lm(formula= inlf~ nwifeinc+educ+kidslt6+exper+I(exper^2), data = mydata); 
-summary(fit.marry)
+summary(fit.marry); 
 inlf=(-0.1288083)+(-0.0052223)*nwifeinc+0.0447794*educ+(- 0.1696127)*kidslt6+0.0421868*exper+(-0.0008764)*I(exper^2); 
 (-0.1288083)+(-0.0052223)*20+0.0447794*12+(-0.1696127)*3+0.0421868*6+(- 0.0008764)*36
 [1] 0.0168308
